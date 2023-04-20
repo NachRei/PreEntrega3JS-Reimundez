@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/logoRestaurant.png">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Recetas de cocina</title>
+  </head>
+  <body>
+    <header class="nav">
+        <a href="./index.html" class="navLogo"><img class="logo" src="./assets/img/logoRestaurant.png" alt="Logo logoRestaurant"></a>
+        <h1 id="title" class="navTitle">Recetas que deseas compartir</h1>
+    </header>
+    <main>
+        <div class="containerH2">
+            <h2 class="recetasActuales">Recetas</h2>
+            <input id="search" class="search" type="search" placeholder="Buscar receta">
+        </div>
+        <div id="contDinamic">
+
+        </div>
+    </main>
+    <div class="ingresarReceta">
+        <h2 class="formTitle">Ingresa tu Receta</h2>
+        <div class="formulario">
+            <form class="formRecetas">
+                <label class="label">Receta <input id="receta" class="control-form1" type="text" name="receta" placeholder="Ingresa el nombre de la receta" required></label>
+                <label class="label">Autor <input id="autor" class="control-form1" type="text" name="autor" placeholder="Ingresa tu nombre"></label>
+                <label class="label">Ingredientes <input id="ingredientes" class="control-form1" type="text" name="ingredientes" placeholder="Especifica los ingredientes" required></label>
+                <label class="label">Paso a paso <textarea id="pasos" class="control-form2" name="pasosReceta" placeholder="Explique su receta paso a paso" required></textarea></label>
+                <input id="btnSubmit" class="control-btn" type="submit" name="Enviar">
+            </form>  
+        </div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
