@@ -6,8 +6,17 @@ const   receta = document.querySelector("#receta"),
         pasos = document.querySelector("#pasos"),
         search = document.querySelector("#search"),
         contenidoDinamico =  document.querySelector("#contDinamic"),
-        formReceta = document.querySelector("#formReceta");       
-const recetasActuales = [
+        formReceta = document.querySelector("#formRecetas"); 
+        boton = document.querySelector("#btnSubmit");
+        console.log(formReceta);      
+        console.log(receta);
+        console.log(autor);
+        console.log(ingredientes);
+        console.log(pasos);
+        console.log(search);
+        console.log(contenidoDinamico);
+        console.log(boton);
+let recetasActuales = [
     {
         receta: "Torta",
         autor: "Ignacio",
@@ -46,14 +55,14 @@ function filtrar(arr, filtro) {
 
 function crearTarjeta (arr){
     contenidoDinamico.innerHTML = "";
-    const card = "";
+    let card = "";
     for (const obj of arr) {
-        const {newReceta, newAutor, newIngre, newPasos} = obj;
-        card.innerHTML = `<div class="tarjeta">
-                    <h3 class="tarjetaTitle">${newReceta}</h3>
-                    <p class="tarjetaAutor">${newAutor}</p><br>
-                    <p class="tarjetaIngre">${newIngre}</p><br>
-                    <p class="tarjetaPasos">${newPasos}</p><br>
+        const {receta, autor, ingredientes, pasos} = obj;
+        card = `<div class="tarjeta">
+                    <h3 class="tarjetaTitle">${receta}</h3>
+                    <p class="tarjetaAutor">${autor}</p><br>
+                    <p class="tarjetaIngre">${ingredientes}</p><br>
+                    <p class="tarjetaPasos">${pasos}</p><br>
                     <button type="button" class="tarjeta-btn">Ver Completo</button>
                 </div>`;
         contenidoDinamico.innerHTML += card;
@@ -73,7 +82,7 @@ function agregar(arr, recetasNew) {
 crearTarjeta(recetas);
 
 // Escucho botón submit
-
+console.log(formReceta); 
 formReceta.addEventListener("submit", (e) => {
     e.preventDefault();
     const newRecet = new recetaNueva(
