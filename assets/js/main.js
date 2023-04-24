@@ -49,7 +49,7 @@ function crearTarjeta (arr){
     const card = "";
     for (const obj of arr) {
         const {newReceta, newAutor, newIngre, newPasos} = obj;
-        card = `<div class="tarjeta">
+        card.innerHTML = `<div class="tarjeta">
                     <h3 class="tarjetaTitle">${newReceta}</h3>
                     <p class="tarjetaAutor">${newAutor}</p><br>
                     <p class="tarjetaIngre">${newIngre}</p><br>
@@ -74,7 +74,7 @@ crearTarjeta(recetas);
 
 // Escucho botón submit
 
-formInventario.addEventListener("submit", (e) => {
+formReceta.addEventListener("submit", (e) => {
     e.preventDefault();
     const newRecet = new recetaNueva(
         receta.value,
@@ -85,7 +85,7 @@ formInventario.addEventListener("submit", (e) => {
     agregar(recetas, recetaNueva);
     AddLocSto(recetas);
     crearTarjeta(recetas);
-    formInventario.reset()
+    formReceta.reset();
 });
 
 //Escucho campo de busqueda
@@ -93,4 +93,4 @@ formInventario.addEventListener("submit", (e) => {
 search.addEventListener("input", () => {
     let filtro = filtrar(recetas, search.value);
     crearTarjeta(filtro);
-});
+}); 
