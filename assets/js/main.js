@@ -16,6 +16,7 @@ const   receta = document.querySelector("#receta"),
         console.log(search);
         console.log(contenidoDinamico);
         console.log(boton);
+//localStorage.clear();        
 let recetasActuales = [
     {
         receta: "Torta",
@@ -31,6 +32,7 @@ let recetasActuales = [
     }
 ];
 let recetas = JSON.parse(localStorage.getItem("recetasActuales")) || recetasActuales;
+console.log(recetas);
 
 //DECLARACION DE FUNCIONES
 
@@ -72,10 +74,10 @@ function crearTarjeta (arr){
         //const pasos = obj[3];
         
         card = `<div class="tarjeta">
-                    <h3 class="tarjetaTitle">${receta}</h3>
-                    <p class="tarjetaAutor">${autor}</p><br>
-                    <p class="tarjetaIngre">${ingredientes}</p><br>
-                    <p class="tarjetaPasos">${pasos}</p><br>
+                    <h3 class="tarjetaTitle">${obj.receta}</h3>
+                    <p class="tarjetaAutor">${obj.autor}</p><br>
+                    <p class="tarjetaIngre">${obj.ingredientes}</p><br>
+                    <p class="tarjetaPasos">${obj.pasos}</p><br>
                     <button type="button" class="tarjeta-btn">Ver Completo</button>
                 </div>`;
         contenidoDinamico.innerHTML += card;
