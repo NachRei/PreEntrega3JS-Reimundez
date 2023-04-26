@@ -24,10 +24,10 @@ let recetasActuales = [
         pasos: "mezclar todo",
     },
     {
-        receta: "Torta",
-        autor: "Ignacio",
-        ingredientes: "leche, huevos, harina, royal",
-        pasos: "mezclar todo",
+        receta: "Pasta",
+        autor: "Matias",
+        ingredientes: "huevos, harina, royal",
+        pasos: "mezclar",
     }
 ];
 let recetas = JSON.parse(localStorage.getItem("recetasActuales")) || recetasActuales;
@@ -104,7 +104,7 @@ formReceta.addEventListener("submit", (e) => {
         ingredientes.value,
         pasos.value,
     );
-    agregar(recetas, recetaNueva);
+    agregar(recetas, newRecet);
     AddLocSto(recetas);
     crearTarjeta(recetas);
     formReceta.reset();
