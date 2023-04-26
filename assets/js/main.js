@@ -63,7 +63,7 @@ function crearTarjeta (arr){
     console.log(arr);
     contenidoDinamico.innerHTML = "";
     let card = "";
-    for (const obj of arr) {
+    for (let obj of arr) {
         console.log(obj);
         //const {receta,autor,ingredientes,pasos} = obj;
         //const receta = obj[0];
@@ -72,10 +72,10 @@ function crearTarjeta (arr){
         //const pasos = obj[3];
         
         card = `<div class="tarjeta">
-                    <h3 class="tarjetaTitle">${obj.receta}</h3>
-                    <p class="tarjetaAutor">${obj.autor}</p><br>
-                    <p class="tarjetaIngre">${obj.ingredientes}</p><br>
-                    <p class="tarjetaPasos">${obj.pasos}</p><br>
+                    <h3 class="tarjetaTitle">${receta}</h3>
+                    <p class="tarjetaAutor">${autor}</p><br>
+                    <p class="tarjetaIngre">${ingredientes}</p><br>
+                    <p class="tarjetaPasos">${pasos}</p><br>
                     <button type="button" class="tarjeta-btn">Ver Completo</button>
                 </div>`;
         contenidoDinamico.innerHTML += card;
