@@ -22,6 +22,12 @@ let recetasActuales = [
         autor: "Ignacio",
         ingredientes: "leche, huevos, harina, royal",
         pasos: "mezclar todo",
+    },
+    {
+        receta: "Torta",
+        autor: "Ignacio",
+        ingredientes: "leche, huevos, harina, royal",
+        pasos: "mezclar todo",
     }
 ];
 let recetas = JSON.parse(localStorage.getItem("recetasActuales")) || recetasActuales;
@@ -57,7 +63,11 @@ function crearTarjeta (arr){
     contenidoDinamico.innerHTML = "";
     let card = "";
     for (const obj of arr) {
-        const {receta, autor, ingredientes, pasos} = obj;
+        //const {receta,autor,ingredientes,pasos} = obj;
+        //const receta = obj[0];
+        //const autor = obj[1];
+        //const ingredientes = obj[2];
+        //const pasos = obj[3];
         card = `<div class="tarjeta">
                     <h3 class="tarjetaTitle">${receta}</h3>
                     <p class="tarjetaAutor">${autor}</p><br>
@@ -85,7 +95,7 @@ crearTarjeta(recetas);
 console.log(formReceta); 
 formReceta.addEventListener("submit", (e) => {
     e.preventDefault();
-    const newRecet = new recetaNueva(
+    let newRecet = new recetaNueva(
         receta.value,
         autor.value,
         ingredientes.value,

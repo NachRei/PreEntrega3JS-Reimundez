@@ -108,6 +108,7 @@
 .tarjeta {
   border: 2px solid #000;
   margin: 10px 0;
+  width: 20%;
 }
 
 .tarjeta .tarjeta-btn {
