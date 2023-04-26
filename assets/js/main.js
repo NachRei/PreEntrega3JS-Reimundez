@@ -6,7 +6,7 @@ const   receta = document.querySelector("#receta"),
         pasos = document.querySelector("#pasos"),
         search = document.querySelector("#search"),
         contenidoDinamico =  document.querySelector("#contDinamic"),
-        formReceta = document.querySelector("#formRecetas"); 
+        formReceta = document.querySelector("#formRecetas"), 
         boton = document.querySelector("#btnSubmit");
         console.log(formReceta);      
         console.log(receta);
@@ -36,8 +36,8 @@ let recetas = JSON.parse(localStorage.getItem("recetasActuales")) || recetasActu
 
 //Función constructora 
 
-function recetaNueva (nombre, autor, ingredientes, pasos){
-  this.nombre = nombre;
+function recetaNueva (receta, autor, ingredientes, pasos){
+  this.receta = receta;
   this.ingredientes = ingredientes;
   this.pasos = pasos;
   autor == "" ? (this.autor = "Anónimo") :  (this.autor = autor)
@@ -60,14 +60,17 @@ function filtrar(arr, filtro) {
 // Función crear tarjetas en el DOM
 
 function crearTarjeta (arr){
+    console.log(arr);
     contenidoDinamico.innerHTML = "";
     let card = "";
     for (const obj of arr) {
+        console.log(obj);
         //const {receta,autor,ingredientes,pasos} = obj;
         //const receta = obj[0];
         //const autor = obj[1];
         //const ingredientes = obj[2];
         //const pasos = obj[3];
+        
         card = `<div class="tarjeta">
                     <h3 class="tarjetaTitle">${receta}</h3>
                     <p class="tarjetaAutor">${autor}</p><br>
